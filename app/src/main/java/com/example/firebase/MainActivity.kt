@@ -47,4 +47,6 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
 //        Toast.makeText(this, "Welcome ${auth.currentUser?.email.toString()}", Toast.LENGTH_SHORT).show()
     }
+
+    //Test Commit
 }
