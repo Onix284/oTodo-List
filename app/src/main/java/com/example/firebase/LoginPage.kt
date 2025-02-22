@@ -24,7 +24,7 @@ class LoginPage : AppCompatActivity() {
         super.onStart()
         val currentUser : FirebaseUser? = auth.currentUser
 
-        if(currentUser != null)
+        if(currentUser != null && !intent.getBooleanExtra("fromSignUp", false))
         {
             startActivity(Intent(this, MainActivity::class.java))
             finish()

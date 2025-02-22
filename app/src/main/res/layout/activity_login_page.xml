@@ -31,7 +31,7 @@
 
     <EditText
         android:id="@+id/email_login"
-        android:layout_width="350dp"
+        android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="76dp"
         android:shadowDy="4"
@@ -63,8 +63,8 @@
 
     <Button
         android:id="@+id/LoginBtn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
         android:layout_marginTop="100dp"
         android:text="Login"
         app:layout_constraintStart_toStartOf="@+id/passwordText_login"
@@ -72,8 +72,8 @@
 
     <Button
         android:id="@+id/SignUpBtn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
         android:layout_marginTop="100dp"
         android:text="Sign Up"
         app:layout_constraintEnd_toEndOf="@+id/passwordText_login"

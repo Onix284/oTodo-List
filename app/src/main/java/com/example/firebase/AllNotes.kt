@@ -74,8 +74,16 @@ class AllNotes : AppCompatActivity(), MyAdapter.OnItemClickListener {
             .setPositiveButton("Update"){ dialog, _ ->
                 val newTitle = dialogBinding.updateNoteTitle.text.toString()
                 val newDescription = dialogBinding.updateNoteDescription.text.toString()
-                updateNoteDatabase(noteId, newTitle, newDescription, dialog)
-                dialog.dismiss()
+                if(newTitle.isEmpty() || newDescription.isEmpty())
+                {
+                    Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
+                    return@setPositiveButton
+                }
+                else{
+                    updateNoteDatabase(noteId, newTitle, newDescription, dialog)
+                    dialog.dismiss()
+                }
+
             }
             .setNegativeButton("Cancel"){dialog, _ ->
                 dialog.dismiss()
@@ -83,8 +91,7 @@ class AllNotes : AppCompatActivity(), MyAdapter.OnItemClickListener {
             .create()
         dialogBinding.updateNoteTitle.setText(currentTitle)
         dialogBinding.updateNoteDescription.setText(currentDescription)
-
-            dialog.show()
+        dialog.show()
     }
 
     private fun updateNoteDatabase(noteId: String, newTitle: String, newDescription: String, update: Any) {
